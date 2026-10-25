@@ -83,36 +83,6 @@ appointmentForm?.addEventListener("submit", (event) => {
   }
 });
 
-const chatToggle = document.querySelector("#chat-toggle");
-const chatClose = document.querySelector("#chat-close");
-const chatPanel = document.querySelector("#chat-panel");
-
-const setChatOpen = (isOpen) => {
-  if (!(chatPanel instanceof HTMLElement) || !(chatToggle instanceof HTMLButtonElement)) {
-    return;
-  }
-
-  chatPanel.hidden = !isOpen;
-  chatToggle.setAttribute("aria-expanded", String(isOpen));
-  if (isOpen) {
-    chatClose?.focus();
-  } else {
-    chatToggle.focus();
-  }
-};
-
-chatToggle?.addEventListener("click", () => {
-  setChatOpen(chatToggle.getAttribute("aria-expanded") !== "true");
-});
-
-chatClose?.addEventListener("click", () => setChatOpen(false));
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && chatToggle?.getAttribute("aria-expanded") === "true") {
-    setChatOpen(false);
-  }
-});
-
 const shareButton = document.querySelector("#share-site");
 
 shareButton?.addEventListener("click", async () => {

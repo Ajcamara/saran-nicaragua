@@ -131,18 +131,9 @@ h1 em, h2 em { color: var(--tan); font-weight: 400; }
 .back-to-top { color: var(--sand); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; }
 .share-button { padding: 0; border: 0; background: transparent; font: inherit; cursor: pointer; }
 .chat-widget { position: fixed; right: max(1.5rem, env(safe-area-inset-right)); bottom: max(1.5rem, env(safe-area-inset-bottom)); z-index: 10; display: flex; flex-direction: column; align-items: flex-end; gap: .8rem; }
-.chat-toggle { display: inline-flex; min-height: 54px; align-items: center; gap: .7rem; padding: .75rem 1.15rem; border: 1px solid var(--tan); border-radius: 999px; background: var(--espresso-light); box-shadow: 0 8px 28px rgba(0,0,0,.28); color: var(--cream); font: 500 .75rem var(--sans); letter-spacing: .06em; cursor: pointer; }
+.chat-toggle { display: inline-flex; min-height: 54px; align-items: center; gap: .7rem; padding: .75rem 1.15rem; border: 1px solid var(--tan); border-radius: 999px; background: var(--espresso-light); box-shadow: 0 8px 28px rgba(0,0,0,.28); color: var(--cream); font: 500 .75rem var(--sans); letter-spacing: .06em; }
 .chat-toggle:hover { background: var(--espresso-deep); }
 .chat-icon { color: var(--tan); font-size: 1.2rem; }
-.chat-panel { position: relative; width: min(350px, calc(100vw - 2rem)); padding: 1.5rem; border: 1px solid var(--line); background: var(--espresso-deep); box-shadow: 0 12px 40px rgba(0,0,0,.35); text-align: left; }
-.chat-panel[hidden] { display: none; }
-.chat-panel .eyebrow { margin-bottom: .75rem; }
-.chat-panel h2 { margin-bottom: .7rem; color: var(--cream); font: 400 2rem var(--serif); }
-.chat-panel > p:not(.eyebrow) { margin-bottom: 1.2rem; color: var(--muted); font-size: .82rem; }
-.chat-close { position: absolute; top: .65rem; right: .75rem; border: 0; background: none; color: var(--sand); font-size: 1.5rem; cursor: pointer; }
-.chat-whatsapp { display: flex; justify-content: space-between; gap: .8rem; padding: .8rem 1rem; border: 1px solid var(--tan); color: var(--cream); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; }
-.chat-whatsapp span { color: var(--tan); }
-.chat-email { display: inline-block; margin-top: .8rem; color: var(--muted); font-size: .75rem; text-decoration: underline; text-underline-offset: .2em; }
 
 :focus-visible { outline: 2px solid var(--tan); outline-offset: 4px; }
 
