@@ -203,3 +203,62 @@ h1 em, h2 em { color: var(--tan); font-weight: 400; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+.look-image { background: radial-gradient(circle at 50% 35%, #5a3326, var(--espresso-deep)); }
+.look-image img { object-fit: cover; object-position: center 25%; filter: none; }
+
+.gallery { background: var(--espresso); }
+.gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .75rem; }
+.gallery-tile { aspect-ratio: 3 / 4; background: url(gallery.png) no-repeat; background-size: 400% 200%; transition: transform .4s, filter .4s; }
+.gallery-tile:hover { transform: scale(1.03); filter: brightness(1.08); }
+.gallery-tile.t0 { background-position: 0.000% 0%; }
+.gallery-tile.t1 { background-position: 33.333% 0%; }
+.gallery-tile.t2 { background-position: 66.667% 0%; }
+.gallery-tile.t3 { background-position: 100.000% 0%; }
+.gallery-tile.t4 { background-position: 0.000% 100%; }
+.gallery-tile.t5 { background-position: 33.333% 100%; }
+.gallery-tile.t6 { background-position: 66.667% 100%; }
+.gallery-tile.t7 { background-position: 100.000% 100%; }
+@media (max-width: 700px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+.gallery-tile.t2 { background: #7a1c14 url(gallery-red.png) no-repeat center 30% / cover; }
+
+/* fit whole portraits inside their frames */
+.look-image { height: clamp(300px, 36vw, 470px); }
+.look-image img { object-fit: contain; object-position: center bottom; }
+.gallery-tile.t2 { background-size: contain; background-position: center bottom; }
+
+/* portrait frames */
+.look-image { height: auto; aspect-ratio: 4 / 5; }
+.gallery-tile { aspect-ratio: 3 / 4; }
+
+/* fill the frame like the collage tiles */
+.look-image img { object-fit: cover; object-position: center top; }
+.gallery-tile.t2 { background-size: cover; background-position: center top; }
+
+/* shorter gallery tiles */
+.gallery-tile { aspect-ratio: 1 / 1; background-size: 400% auto; }
+.gallery-tile.t0, .gallery-tile.t1, .gallery-tile.t3 { background-position-y: 8%; }
+.gallery-tile.t4, .gallery-tile.t5, .gallery-tile.t6, .gallery-tile.t7 { background-position-y: 88%; }
+.gallery-tile.t2 { background-size: cover; background-position: center top; }
+
+/* 4:3 gallery tiles */
+.gallery-tile { aspect-ratio: 4 / 3; }
+.gallery-tile.t0, .gallery-tile.t1, .gallery-tile.t3 { background-position-y: 8%; }
+.gallery-tile.t4, .gallery-tile.t5, .gallery-tile.t6, .gallery-tile.t7 { background-position-y: 77%; }
+
+/* gallery feature portrait */
+.gallery-grid { display: flex; justify-content: center; }
+.gallery-feature { margin: 0; width: min(100%, 420px); aspect-ratio: 4 / 5; position: relative; overflow: hidden; border-radius: 210px 210px 6px 6px; border: 1px solid rgba(243,233,223,.35); background: radial-gradient(circle at 50% 35%, #a3261b, #3a1410 80%); box-shadow: 0 24px 60px rgba(0,0,0,.45); }
+.gallery-feature img { object-fit: cover; object-position: center 12%; transform: scale(1.12); transform-origin: 50% 40%; -webkit-mask-image: radial-gradient(ellipse 62% 78% at 50% 50%, #000 62%, transparent 100%); mask-image: radial-gradient(ellipse 62% 78% at 50% 50%, #000 62%, transparent 100%); }
+.gallery-feature { width: min(100%, 260px); border-radius: 130px 130px 6px 6px; }
+.gallery-feature { width: min(100%, 200px); border-radius: 100px 100px 6px 6px; }
+
+/* gallery picture sized like the look cards */
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; justify-content: stretch; }
+.gallery-feature { width: 100%; aspect-ratio: 4 / 5; border-radius: 0; border: 0; box-shadow: none; }
+.gallery-feature img { transform: none; object-position: center top; }
+@media (max-width: 700px) { .gallery-grid { grid-template-columns: 1fr; } }
+.gallery-feature.coral { background: radial-gradient(circle at 50% 35%, #5a3326, var(--espresso-deep)); }
+.gallery-feature.coral img { -webkit-mask-image: none; mask-image: none; object-position: center top; }
+.gallery-feature:not(.coral) { background: radial-gradient(circle at 50% 35%, #5a3326, var(--espresso-deep)); }
+.gallery-feature:not(.coral) img { -webkit-mask-image: none; mask-image: none; transform: none; object-position: center top; }
